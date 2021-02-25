@@ -73,22 +73,24 @@ if (getInput(3) !== undefined) {
 
 if (getInput(5) !== undefined) {
   console.log(
-    "Your password is not valid. Passwords could only contain a max of two spaces, at least eight characters, at least one uppercase letter, and at least one lowercase letter. If your password contains more than two spaces, surround it with quotation marks."
+    "\nYour password is not valid. Passwords could only contain a maximum of two spaces, \nat least eight characters, at least one uppercase letter, and at least one \nlowercase letter. If your password contains more than two spaces, surround \nit with quotation marks.\n"
   );
-} else if (passwordMatches(userEmail, userPassword)) {
-  console.log("You're logged in!");
 } else if (isRegisteredUser(userEmail)) {
-  console.log(
-    "Your password is incorrect! You may need to surround your password with quotations if it contains more than two spaces!"
-  );
+  if (passwordMatches(userEmail, userPassword)) {
+    console.log("You're logged in!");
+  } else {
+    console.log(
+      "\nYou're password is incorrect!. You may need to surround your password with quotations \nif it contains more than two spaces!\n"
+    );
+  }
 } else if (isValidEmail(userEmail) && isValidPassword(userPassword)) {
   console.log("You're all signed up!");
 } else if (!isValidEmail(userEmail)) {
   console.log(
-    "Your email is not valid. Emails must contain at least one character along with a @codeimmersives.com domain name!"
+    "\nYour email is not valid. Emails must contain at least one character along \nwith a @codeimmersives.com domain name!\n"
   );
 } else if (!isValidPassword(userPassword)) {
   console.log(
-    "Your password is not valid. Passwords could only contain a max of two spaces, at least eight characters, at least one uppercase letter, and at least one lowercase letter. If your password contains more than two spaces, surround it with quotation marks."
+    "\nYour password is not valid. Passwords could only contain a maximum of two \nspaces, at least eight characters, at least one uppercase letter, and at least one \nlowercase letter. If your password contains more than two spaces, surround \nit with quotation marks.\n"
   );
 }

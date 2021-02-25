@@ -64,13 +64,16 @@ const {
 let userEmail = getInput(1);
 let userPassword = getInput(2);
 
-if (getInput(3) !== undefined && getInput(4) !== undefined) {
-  userPassword += " " + getInput(3) + " " + getInput(4);
+if (getInput(3) !== undefined) {
+  userPassword += " " + getInput(3);
+  if (getInput(4) !== undefined) {
+    userPassword += " " + getInput(4);
+  }
 }
 
 if (getInput(5) !== undefined) {
   console.log(
-    "Your password is not valid. Passwords could only contain two spaces, at least eight characters, at least one uppercase letter, and at least one lowercase letter. If your password contains more than two spaces, surround it with quotation marks."
+    "Your password is not valid. Passwords could only contain a max of two spaces, at least eight characters, at least one uppercase letter, and at least one lowercase letter. If your password contains more than two spaces, surround it with quotation marks."
   );
 } else if (passwordMatches(userEmail, userPassword)) {
   console.log("You're logged in!");
@@ -86,6 +89,6 @@ if (getInput(5) !== undefined) {
   );
 } else if (!isValidPassword(userPassword)) {
   console.log(
-    "Your password is not valid. Passwords could only contain two spaces, at least eight characters, at least one uppercase letter, and at least one lowercase letter. If your password contains more than two spaces, surround it with quotation marks."
+    "Your password is not valid. Passwords could only contain a max of two spaces, at least eight characters, at least one uppercase letter, and at least one lowercase letter. If your password contains more than two spaces, surround it with quotation marks."
   );
 }
